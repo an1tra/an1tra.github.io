@@ -1,0 +1,15 @@
+body {
+    background-image: url("DobermanWebsite.jpg");
+    font-family: 'Playfair Display', serif;
+}
+
+section {
+    position: absolute;
+    left: 650px;
+    top: 200px;
+    width: 50%;
+}
+section p {
+    font-size: 24px;
+    text-indent: 25px;
+}
