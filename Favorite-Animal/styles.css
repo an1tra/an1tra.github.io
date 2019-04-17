@@ -1,5 +1,7 @@
 body {
     background-image: url("DobermanWebsite.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     font-family: 'Playfair Display', serif;
 }
 
