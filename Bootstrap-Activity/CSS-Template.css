@@ -1,0 +1,17 @@
+.bold {
+    font-weight: bold;
+}
+
+.large-text {
+    font-size: 24px;
+    font-family: 'Dokdo', cursive;
+}
+
+.line-height {
+    line-height: 50px;
+    font-family: 'Pacifico', cursive;
+}
+
+body {
+    font-family: 'Amatic SC', cursive;
+}

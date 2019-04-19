@@ -2,7 +2,7 @@
 section {
     width: 960px;
     height: 350px;
-    background-color: rgba(0, 0, 0, 0.25);
+    background-color: rgba(0, 0, 0, 0.35);
     margin: 75px auto;
     padding: 20px;
 }
@@ -15,7 +15,7 @@ section h2 {
 }
 
 section article img {
-    border-radius: 100px;
+    border-radius: 75px;
     position: relative;
     bottom: 15px;
     margin: 10px;

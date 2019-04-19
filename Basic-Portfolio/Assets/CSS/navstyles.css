@@ -1,4 +1,4 @@
-body, html {
+html {
     background-image: url("../Images/codingpattern.jpg");
     background-position:center;
     background-repeat:no-repeat;
@@ -11,7 +11,7 @@ h2 {
     font-family: "Georgia", Times, Times New Roman, serif;
 }
 
-nav {
+header {
     background-color: rgba(0, 0, 0, 0.25);
     width: 100%;
 }
@@ -24,6 +24,11 @@ nav {
     text-align: center;
     width:250px;
 
+}
+
+nav {
+    position: relative;
+    bottom: 85px;
 }
 
 ul {
