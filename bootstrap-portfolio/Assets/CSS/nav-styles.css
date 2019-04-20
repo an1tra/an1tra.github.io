@@ -1,0 +1,10 @@
+nav ul li {
+    list-style-type: none;
+    display: inline;
+    text-align: right;
+}
+
+nav ul li a {
+    display: inline-block;
+    padding: 15px;
+}

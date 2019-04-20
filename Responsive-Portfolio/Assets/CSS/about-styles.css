@@ -1,0 +1,15 @@
+body {
+    background-image: url("../Images/profileavatar.jpg");
+    background-repeat: no-repeat;
+    background-position: fixed; 
+}
+
+section {
+    width: 40%;
+    position: relative;
+    left: 600px;
+}
+
+section > h1 {
+    text-align: center;
+}
