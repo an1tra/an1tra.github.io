@@ -2,6 +2,8 @@ body {
     background-image: url("../Images/profileavatar.jpg");
     background-repeat: no-repeat;
     background-position: fixed; 
+    font-family: 'Source Code Pro', monospace;
+
 }
 
 nav {
