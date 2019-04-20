@@ -1,0 +1,14 @@
+section {
+    width: 50%;
+    position: absolute;
+    left: 300px;
+    top: 200px;
+}
+
+section h2 {
+    text-align: center;
+}
+
+section p {
+    padding-left: 25px;
+}

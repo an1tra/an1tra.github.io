@@ -1,9 +1,3 @@
-body {
-    background-image: url("../Images/profileavatar.jpg");
-    background-repeat: no-repeat;
-    background-position: fixed; 
-}
-
 section {
     width: 40%;
     position: relative;
@@ -11,5 +5,17 @@ section {
 }
 
 section > h1 {
+    text-align: center;
+    margin-top: 100px;
+    position: relative;
+}
+
+section p {
+    text-indent: 25px;
+    line-height: 25px;
+}
+
+section a {
+    position: relative;
     text-align: center;
 }

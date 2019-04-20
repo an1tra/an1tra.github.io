@@ -1,0 +1,13 @@
+#wrapper {
+    
+    margin-top: 200px;
+}
+
+table {
+    margin: 0 auto;
+}
+
+table tr td {
+    padding-right: 50px;
+    text-align: center;
+}
