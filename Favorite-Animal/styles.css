@@ -6,12 +6,37 @@ body {
 }
 
 section {
-    position: absolute;
-    left: 650px;
-    top: 200px;
     width: 50%;
+    position: fixed;
+    left: 45%;
 }
 section p {
-    font-size: 24px;
+    font-size: 1.5em;
     text-indent: 25px;
+    text-align: justify;
 }
+
+section h1{
+    text-align: center;
+}
+
+@media screen and (max-width: 980px) {
+
+    body {
+        background-size: 50%;
+    }
+  }
+
+@media screen and (max-width: 768px) {
+
+    body {
+        background-size: 35%;
+    }
+  }
+
+@media screen and (max-width: 640px) {
+  
+    body {
+      background-size: 25%;
+    }
+  }
