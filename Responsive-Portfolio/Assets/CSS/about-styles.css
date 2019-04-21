@@ -1,22 +1,17 @@
 section {
-    width: 40%;
-    position: relative;
-    left: 600px;
-}
+    width: 50%;
+    margin-left: 50px;
+    float: left;
+    padding: 15px;
+    border: 1px solid red;
+  }
 
-section > h1 {
+  section h2 {
     text-align: center;
-    margin-top: 100px;
-    position: relative;
-}
+  }
 
-section p {
-    text-indent: 25px;
-    line-height: 25px;
+  section p {
+    line-height: 20px;
+    text-indent: 50px;
     text-align: justify;
-}
-
-section a {
-    position: relative;
-    text-align: center;
-}
+  }

@@ -1,0 +1,70 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("../images/profileavatar.jpg");
+    background-repeat: no-repeat;
+    background-position-x: 700px; 
+    font-family: 'Source Code Pro', monospace;
+}
+
+header h1 {
+    text-align: center;
+}
+
+header {
+    border: 2px solid red;
+}
+
+
+ul {
+  width: 10%;
+  float: left;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid green;
+}
+
+li {
+  padding: 15px;
+}
+a {
+  text-decoration: none;
+  display: block;
+  font-size: 1.125em;
+  color: black;
+  border: 1px solid blue;
+}
+
+@media screen and (max-width: 980px) {
+  a {
+    float: none;
+    width: 100%;
+  }
+  body {
+    background-position-x: 500px;
+    background-size: 50%;
+  }
+}
+@media screen and (max-width: 768px) {
+  a {
+    float: none;
+    width: 100%;
+  }
+  body {
+    background-position-x: 400px;
+    background-size: 40%;
+  }
+}
+@media screen and (max-width: 640px) {
+  a {
+    float: none;
+    width: 100%;
+  }
+  body {
+    background-position-x: 300px;
+    background-size: 20%;
+  }
+}

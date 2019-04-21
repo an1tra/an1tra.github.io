@@ -1,10 +1,7 @@
-article {
-    width: 30%;
-    position: relative;
-    left: 600px;
+* {
+    box-sizing: border-box;
 }
 
-article h1 {
-    margin-top: 100px;
+.content {
     text-align: center;
 }
