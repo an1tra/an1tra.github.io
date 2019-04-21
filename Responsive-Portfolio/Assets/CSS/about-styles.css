@@ -13,6 +13,7 @@ section > h1 {
 section p {
     text-indent: 25px;
     line-height: 25px;
+    text-align: justify;
 }
 
 section a {

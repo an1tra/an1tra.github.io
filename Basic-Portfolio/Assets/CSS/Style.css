@@ -27,4 +27,5 @@ section article p {
     line-height: 2;
     margin: 10px;
     color: white;
+    text-align: justify;
 }
