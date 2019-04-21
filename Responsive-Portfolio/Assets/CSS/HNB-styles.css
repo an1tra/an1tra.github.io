@@ -14,7 +14,7 @@ header h1 {
 }
 
 header {
-    border: 2px solid red;
+    
 }
 
 
@@ -24,7 +24,7 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  border: 1px solid green;
+  
 }
 
 li {
@@ -35,7 +35,7 @@ a {
   display: block;
   font-size: 1.125em;
   color: black;
-  border: 1px solid blue;
+  
 }
 
 @media screen and (max-width: 980px) {
