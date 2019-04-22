@@ -16,6 +16,10 @@ section {
     text-align: justify;
   }
 
+  a button {
+    float: left;
+  }
+
   @media screen and (max-width: 980px) {
     section {
       float: none;
