@@ -15,3 +15,27 @@ section {
     text-indent: 50px;
     text-align: justify;
   }
+
+  @media screen and (max-width: 980px) {
+    section {
+      float: none;
+      width: 100%;
+      clear: both;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    section {
+      float: none;
+      width: 100%;
+      clear: both;
+    }
+    
+  }
+  @media screen and (max-width: 640px) {
+    section {
+      float: none;
+      width: 100%;
+      clear: both;
+    }
+
+  }

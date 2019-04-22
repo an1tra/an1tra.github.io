@@ -5,15 +5,18 @@
 body {
     background-image: url("../images/profileavatar.jpg");
     background-repeat: no-repeat;
-    background-position-x: 700px; 
-    font-family: 'Source Code Pro', monospace;
-}
+    background-position-y: -10%;
+    background-position-x: 115%;
+    font-family: 'Source Code Pro', monospace;  }
 
 header h1 {
     text-align: center;
 }
 
 header {
+    color: red;
+    padding: 10px;
+    font-family: 'Rock Salt', cursive;
     
 }
 
@@ -38,10 +41,17 @@ a {
   
 }
 
+nav ul li a:hover { 
+  background: black;
+  color:white;
+}
+
+
 @media screen and (max-width: 980px) {
-  a {
+  nav ul li a {
     float: none;
     width: 100%;
+    clear: both;
   }
   body {
     background-position-x: 500px;
@@ -49,9 +59,10 @@ a {
   }
 }
 @media screen and (max-width: 768px) {
-  a {
+  nav ul li a {
     float: none;
     width: 100%;
+    clear: both;
   }
   body {
     background-position-x: 400px;
@@ -59,9 +70,10 @@ a {
   }
 }
 @media screen and (max-width: 640px) {
-  a {
+  nav ul li a {
     float: none;
     width: 100%;
+    clear: both;
   }
   body {
     background-position-x: 300px;

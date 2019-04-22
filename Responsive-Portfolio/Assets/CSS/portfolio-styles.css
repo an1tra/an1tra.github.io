@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+}
+
+table {
+    border-spacing: 10px;
+    left:50px;
+    
+}
+
+section h1 {
+    width: 50%;
+    text-align: center;
+}
+
+td p {
+    text-align: center;
+}
+
+@media screen and (max-width: 980px) {
+    nav ul li a {
+      float: none;
+      width: 100%;
+      clear: both;
+    }
+    section h1 {
+        width: 100%;
+        clear: both;
+      }
+    
+  }
+  @media screen and (max-width: 768px) {
+    nav ul li a {
+      float: none;
+      width: 100%;
+      clear: both;
+    }
+    section h1 {
+        width: 100%;
+        clear: both;
+      }
+
+  }
+  @media screen and (max-width: 640px) {
+    nav ul li a {
+      float: none;
+      width: 100%;
+      clear: both;
+    }
+    section h1 {
+        width: 100%;
+        clear: both;
+      }
+
+  }
+  
