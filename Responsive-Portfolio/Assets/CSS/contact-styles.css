@@ -1,0 +1,21 @@
+section {
+    
+    width:100%;
+
+}
+
+form {
+    
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+
+}
+
+input {
+    width: 70%;
+}
+
+textarea {
+    width: 70%;
+}
