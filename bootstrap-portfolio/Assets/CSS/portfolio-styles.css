@@ -1,11 +1,14 @@
+section {
+    position: relative;
+    top: 200px;
+    left: 500px;
+    
+}
+
 img {
     display:inline;
 }
 
-section {
-    margin: 200px;
-    
-}
 
 figcaption {
     color: white;

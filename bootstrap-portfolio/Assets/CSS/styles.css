@@ -1,15 +1,23 @@
 section {
     width: 50%;
-    position: absolute;
-    left: 300px;
-    top: 200px;
+    background: rgba(0, 0, 0, 0.7);
+    margin: 150px auto;
 }
 
 section h2 {
+    color:#4aaaa5;
     text-align: center;
 }
 
-section p {
-    padding-left: 25px;
-    color: white;
+section img {
+    float: left;
+    padding: 20px;
 }
+
+section p {
+    padding: 40px;
+    color: white;
+    text-align: justify;
+    text-indent: 50px;
+}
+

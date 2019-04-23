@@ -8,7 +8,7 @@ form {
     
     display: block;
     width: 50%;
-    margin: 0 auto;
+    margin: 50px auto;
 
 }
 
@@ -18,4 +18,9 @@ input {
 
 textarea {
     width: 70%;
+}
+
+.btn {
+    width: 20%;
+    margin: 0 auto;
 }

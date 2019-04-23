@@ -5,8 +5,10 @@
 body {
     background-image: url("../images/avatar.png");
     background-repeat: no-repeat;
-    background-position: 100% 20%;
-    font-family: 'Source Code Pro', monospace;  }
+    background-position: 90% 0;
+    background-size: 35%;
+    font-family: 'Source Code Pro', monospace;  
+  }
 
 header h1 {
     text-align: center;
