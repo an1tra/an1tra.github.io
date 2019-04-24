@@ -1,5 +1,6 @@
+
 #wrapper {
-    
+    overflow-x: auto;
     margin-top: 200px;
 }
 
@@ -15,9 +16,20 @@ table tr td {
 table tr td a {
     text-decoration: none;
 }
-.stripe {
-    height: 30px;
-    width: 100%;
+figcaption {
     color:white;
-    background: rgba(0, 0, 0, 0.25);
+    
+}
+
+@media screen and (max-width: 980px) {
+
+}
+
+
+@media screen and (min-width: 768px) {
+
+}
+
+@media screen and (max-width: 640px) {
+ 
 }
