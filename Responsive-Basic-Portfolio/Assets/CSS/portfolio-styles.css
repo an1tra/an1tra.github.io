@@ -12,6 +12,9 @@ table tr td {
     text-align: center;
 }
 
+table tr td a {
+    text-decoration: none;
+}
 .stripe {
     height: 30px;
     width: 100%;
