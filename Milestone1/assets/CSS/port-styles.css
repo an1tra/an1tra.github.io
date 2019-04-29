@@ -2,25 +2,34 @@
     box-sizing: border-box;
 }
 
-table {
-    border-spacing: 10px;
-    left:50px;
+#wrapper {
+    width: 50%;
+    position: absolute;
+    left: 200px;
     
 }
 
-section h1 {
-    width: 50%;
+h1 {
     text-align: center;
 }
 
-td p {
+#grid {
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+    grid-template-rows: 50% 50%;
+    grid-column-gap: 20px;
+    grid-row-gap: 10px;
+    margin: 0 100px;
+}
+
+.grid-box {
     text-align: center;
+    
+}
+
+.re-size {
     width: 200px;
-}
-
-img {
-  width: 200px;
-  height: 200px;
+    height: 200px;
 }
 
 @media screen and (max-width: 980px) {
@@ -57,6 +66,13 @@ img {
         width: 100%;
         clear: both;
       }
+    #grid {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 16.6% 16.6% 16.6% 16.6% 16.6% 16.6%;
+        margin: 0;
+      }
+    
 
   }
   
