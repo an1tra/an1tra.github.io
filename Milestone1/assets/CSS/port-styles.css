@@ -13,6 +13,23 @@ h1 {
     text-align: center;
 }
 
+div p {
+    width: 200px;
+    text-align: center;
+    margin: 0 auto;
+    
+}
+
+img {
+    width: 200px;
+    text-align: center;
+    
+}
+
+div a {
+    text-decoration: none;
+}
+
 #grid {
     display: grid;
     grid-template-columns: 33.3% 33.3% 33.3%;
