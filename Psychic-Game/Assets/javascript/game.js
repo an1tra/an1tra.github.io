@@ -10,8 +10,9 @@ var guessChoices = [];
 
 //Create a function for user pressing a key on the keyboard
 document.onkeyup = function(event) {
-//Store that as a user guess.
+//When a key is pressed store that as a userGuess.
     var userGuess = event.key;
+
 //The computer guess is a random number between 0 and length of the array.
     var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 //User options
@@ -19,7 +20,7 @@ document.onkeyup = function(event) {
     
 //Takes the userGuess and locates position in options array. (will output -1 if userGuess is not in the options array) 
    if (options.indexOf(userGuess) > -1) {
-//If userGuess matches random computerGuess the wins variable increases by 1.
+//If userGuess matches random computerGuess the wins variable increases by 1, numGuesses remains at 10, and nothing pushed to guessChoices array.
        if (userGuess === computerGuess) {
            wins++;
            numGuesses = 10;
