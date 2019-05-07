@@ -20,6 +20,14 @@ section {
     float: left;
   }
 
+  button {
+    padding: 15px;
+    margin: 10px;
+    border: 1px solid white;
+    border-radius: 25%;
+
+  }
+
   @media screen and (max-width: 980px) {
     section {
       float: none;
