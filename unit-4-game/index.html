@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crystals Game</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+    <h1>Crystals Collector</h1>
+    <div class="instructions">
+        <p>You will be given a random number at the start of the game.</p>
+        <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
+        <p>You win the game by matching your total score to random number, you lose the game if your total score goes above the random number.</p>
+        <p> The value of each crystal is hidden from you until you click on it.</p>
+        <p>Each time when the game starts, the game will change the values of each crystal.</p>
+    </div>
+    <div class="container">
+        <div id="random-number">39</div>
+        <div id="score">
+            <p>Wins: 0</p>
+            <p>Loses: 0</p>
+        </div>
+    </div>
+    <div class="container">
+        <button id="button1"><img src="assets/images/1.jpg" alt="crystal 1"></button>
+        <button id="button2"><img src="assets/images/2.jpg" alt="crystal 2"></button>
+        <button id="button3"><img src="assets/images/3.jpg" alt="crystal 3"></button>
+        <button id="button4"><img src="assets/images/4.jpg" alt="crystal 4"></button>
+    </div>
+    <div>
+        <p class="total">Your total score is:</p>
+        <div id="total" class="total">0</div>
+    </div>
+</body>
+</html>
