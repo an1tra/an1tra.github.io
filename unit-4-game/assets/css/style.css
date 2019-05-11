@@ -6,59 +6,19 @@ html {
 }
 
 
-h1 {
-    background: #CB6F33;
-    color: white;
-    padding: 10px;
-    width: 300px;
-    text-align: center;
-}
-
 img {
     width: 100px;
     height: 100px;
 }
 
-
-.instructions {
-    background:#FBE6CF;
-    color: green;
-    font-weight: bold;
-    width: 500px;
+.numberBox {
+    background: white;
+    color: #CB6F33;
 }
 
-.container {
-    display: flex;
-    margin-bottom: 10px;
-}
-
-.total {
-    background: #1FA397;
-    color: white;
-    width: 200px;
-}
-
-#total {
-    font-size: 1em;
-    width: 200px;
-    height: 150px;
-}
-
-#random-number {
-    background: #53C987;
-    color: purple;
-    width: 200px;
-    height: 150px;
-    margin-right: 20px;
-}
-
-#score {
-    background: #3AFEFD;
-    width:100px;
-    height: 150px;
-    
-}
-
-#score p {
+.text-center {
     text-align: center;
 }
+
+
+

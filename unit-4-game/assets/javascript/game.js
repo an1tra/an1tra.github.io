@@ -20,59 +20,61 @@ $(document).ready(function() {
 
 	// =========== NUMBER ARRAYS ============
 
-	// random computer variable array
-	var rand = [];
-
-	for (var i = 19; i < 121; i++) {
-		rand.push(i);
+	// computer variable array
+	let numberRange = [];
+    
+    //The empty array holds #'s 19-120. 
+	for (let i = 19; i < 121; i++) {
+        numberRange.push(i);
 	}
 
 	// crystal numbers array
-	var crystals = [];
-
-	for (var c = 1; c < 13; c++) {
-
-		crystals.push(c);
+	let crystalsNumberRange = [];
+    
+    //The empty array holds #'s 1-12.
+	for (let c = 1; c < 13; c++) {
+		crystalsNumberRange.push(c);
 	}
 
-	// console.log(crystals);
 
     	// ========= GLOBAL VARIABLES ===========
 
 	// random variables selected by computer
-	var randNumber; // number to match
-	var crystalNumbers = []; // for array of random crystal values
+	let numberToMatch; // number to match
+	let crystalNumbers = []; // for array of random crystal values
 
-	var c1;
-	var c2;
-	var c3;
-	var c4;
+	let c1;
+	let c2;
+	let c3;
+	let c4;
 
-  var totalScore = 0; // user's score
+  let totalScore = 0; // user's score
 
-	var wins = 0;
-    var losses = 0;
+	let wins = 0;
+    let losses = 0;
     
     // ============= FUNCTIONS ================
 
 	// pick a random number
 	function pickRandomNumber(arr) {
+        //Math.random generates random number from 0 to 1. 
+        //Multiply Math.random by array length to get various numbers not limited to 0-1.
+        //Math.floor => rounds down the above result to nearest int. 
+		let x = arr[Math.floor(Math.random() * arr.length)];
+		numberToMatch = x;
+		$("#randomNumber").html(numberToMatch);
 
-		var x = arr[Math.floor(Math.random() * arr.length)];
-		randNumber = x;
-		$("#randomNumber").html(randNumber);
+		console.log("random number: " + numberToMatch);
 
-		console.log("random number: " + randNumber);
-
-	} // END of pickRandomNumber function
+	} 
 
 	// pick random numbers for crystals
 
 	function pickRandomCrystals(arr) {
 
-		for (var y = 0; y < 4; y++){
+		for (let y = 0; y < 4; y++){
 
-			var a = arr[Math.floor(Math.random() * arr.length)];
+			let a = arr[Math.floor(Math.random() * arr.length)];
 
 			crystalNumbers.push(a);
 		}
@@ -99,9 +101,9 @@ $(document).ready(function() {
 
 		crystalNumbers = []; // clears crystal number values
 
-		pickRandomNumber(rand);
+		pickRandomNumber(numberRange);
 
-		pickRandomCrystals(crystals);
+		pickRandomCrystals(crystalsNumberRange);
 
 		crystalValues(crystalNumbers);
 
@@ -113,14 +115,14 @@ $(document).ready(function() {
 
     // *** GAME SETTINGS AT START ***
 
-	pickRandomNumber(rand); // random number to match
-	pickRandomCrystals(crystals); // array of random crystal values
+	pickRandomNumber(numberRange); // random number to match
+	pickRandomCrystals(crystalsNumberRange); // array of random crystal values
 	crystalValues(crystalNumbers);
 
-		// crystal button functions
+		// crystal button functions using jquery
 
 		$("#button-1").on("click", function() {
-
+            //same as totalScore = totalScore + c1
 			totalScore += c1;
 			$("#totalNumber").html(totalScore);
 		});
@@ -145,7 +147,7 @@ $(document).ready(function() {
 
 	$("button").on("click", function() {
 		// this is what happens if the user wins
-		if (totalScore == randNumber) {
+		if (totalScore == numberToMatch) {
 
 			wins++;
 			console.log(totalScore);
@@ -156,7 +158,7 @@ $(document).ready(function() {
 			setTimeout(function() {gameReset("YOU WIN!!")}, 200);
 		}
 
-		else if (totalScore > randNumber){
+		else if (totalScore > numberToMatch){
 
 			losses++;
 			$("#totalNumber").html(totalScore);
