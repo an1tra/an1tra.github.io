@@ -1,2 +1,2 @@
 # an1tra.github.io
-Github Pages
+A collection of homework assignments. 
