@@ -15,7 +15,7 @@ function myTimer() {
     sec--;
     if (sec == -1) {
         clearInterval(time);
-        alert("Time up!");
+        alert("Times up!");
     }
 }
 
