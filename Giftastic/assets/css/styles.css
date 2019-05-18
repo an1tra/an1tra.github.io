@@ -1,0 +1,13 @@
+#buttonDiv {
+    text-align: center;
+    margin: 5px;
+    font-size: 2em;
+}
+
+.form-group {
+    text-align: right;
+}
+
+button {
+    margin: 5px;
+}
