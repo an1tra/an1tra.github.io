@@ -13,7 +13,13 @@ for (i=0; i < arr.length; i++) {
   });
 }
 
+
+
+
 function newBtn() {
-    arr.push("#input");
+  let newButton = document.createElement("button");
+  
+  newButton.innerHTML = "input"; //This is where I want to place the input from the search box to form a new button. For now, the new button says "input".
+  buttonDiv.appendChild(newButton);
+  
 }
- 
