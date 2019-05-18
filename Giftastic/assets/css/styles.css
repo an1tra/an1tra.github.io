@@ -1,7 +1,7 @@
 #buttonDiv {
     text-align: center;
     margin: 5px;
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 .form-group {
@@ -10,4 +10,8 @@
 
 button {
     margin: 5px;
+    padding: 10px;
+    border-radius: 20%;
+    background: blue;
+    color: white;
 }
