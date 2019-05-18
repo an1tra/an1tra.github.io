@@ -8,9 +8,12 @@ for (i=0; i < arr.length; i++) {
   button.innerHTML = arr[i];
   buttonDiv.appendChild(button);
   button.addEventListener ("click", function() {
+    /*This is where the giphy search would happen if i knew what I was doing. For now, alert.*/ 
     alert(this.innerHTML);
   });
 }
 
-
+function newBtn() {
+    arr.push("#input");
+}
  
