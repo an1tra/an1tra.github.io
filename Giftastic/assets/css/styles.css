@@ -1,28 +1,10 @@
-#buttonDiv {
+button,
+div,
+form,
+input {
+  margin: 10px;
+}
+
+.container {
     text-align: center;
-    margin: 5px;
-    font-size: 1.3em;
-}
-
-.question {
-    text-align: right;
-    border: 4px solid red;
-    width: 400px;
-    float: right;
-   
-}
-
-.inputGroup {
-    text-align: right;
-    width: 400px;
-    float: right;
-}
-
-button {
-    margin: 5px;
-    padding: 10px;
-    width: 200px;
-    border-radius: 15%;
-    background: blue;
-    color: white;
 }
