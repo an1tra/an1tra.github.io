@@ -5,12 +5,22 @@ input {
   margin: 10px;
 }
 
+img {
+  height: 200px;
+  width: 225px;
+}
+
 .container {
     text-align: center;
 }
 
 .right {
   text-align: right;
+}
+
+.flex {
+  display: flex;
+  display: inline;
 }
 
 #searches-view {

@@ -5,7 +5,7 @@
 	 // Initial array of searches
       var searches = ["Plane", "Carl Jung", "Mr. Nobody", "Tesla"];
 
-      // displayMovieInfo function re-renders the HTML to display the appropriate content
+      // displaySearchInfo function re-renders the HTML to display the appropriate content
       function displaySearchInfo() {
 
         var gifSearch = $(this).attr("data-name");
@@ -20,6 +20,7 @@
           var results = response.data;
           for (var i = 0; i < results.length; i++) {
             var gifDiv = $("<div>");
+            gifDiv.addClass("flex");
             var gifImages = $("<img>").attr("src", results[i].images.original.url);
             gifDiv.append(gifImages);
 
