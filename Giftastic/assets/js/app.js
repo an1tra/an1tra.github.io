@@ -21,17 +21,37 @@
           for (var i = 0; i < results.length; i++) {
             var gifDiv = $("<div>");
             gifDiv.addClass("flex");
-            var gifImages = $("<img>").attr("src", results[i].images.original.url);
+
+            var gifImages = $("<img>");
+            gifImages.attr("class", "animate");
+            // Still must load first per HW instructions.
+            gifImages.attr("src", results[i].images.fixed_height_still.url);
+            gifImages.attr("data-still", results[i].images.fixed_height_still.url);
+            gifImages.attr("data-animate", results[i].images.fixed_height.url);
+            gifImages.attr("data-state", "still");
             gifDiv.append(gifImages);
 
             $("#searches-view").prepend(gifDiv);
+
           };
-          
-         
           
         });
 
       }
+
+
+      $(document).on("click", ".animate", function() {
+        var state = $(this).attr("data-state");
+    
+        if (state === "still") {
+            $(this).attr("src", $(this).attr("data-animate"));
+            $(this).attr("data-state", "animate");
+        } else {
+            $(this).attr("src", $(this).attr("data-still"));
+            $(this).attr("data-state", "still");
+        }
+    
+    });
 
       // Function for displaying search data
       function renderButtons() {
@@ -69,6 +89,9 @@
         // Calling renderButtons which handles the processing of our searches array
         renderButtons();
       });
+
+      
+
 
       // Adding a click event listener to all elements with a class of "search-btn"
       $(document).on("click", ".search-btn", displaySearchInfo);

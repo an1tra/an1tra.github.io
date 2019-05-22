@@ -5,9 +5,20 @@ input {
   margin: 10px;
 }
 
+body {
+  background: black;
+  color: purple;
+}
+
+button {
+  padding: 5px;
+  width:100px;
+}
+
 img {
   height: 200px;
   width: 225px;
+  border: 1px solid grey;
 }
 
 .container {
@@ -27,5 +38,4 @@ img {
   width: 1500px;
   margin: 0 auto;
   text-align: center;
-  border: 1px solid red;
 }
