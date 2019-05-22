@@ -2,8 +2,8 @@
 	 //"https://api.giphy.com/v1/gifs/search?api_key=dlBJEEg3yLQtOKfclJ2ukWFYJtJFRgi6&q=" + search + "&limit=10&offset=0&rating=g&lang=en&fmt=JSON"
 	 
 	
-	 // Initial array of movies
-      var searches = ["Inception", "The Matrix", "Mr. Nobody", "The Giver"];
+	 // Initial array of searches
+      var searches = ["Plane", "Carl Jung", "Mr. Nobody", "Tesla"];
 
       // displayMovieInfo function re-renders the HTML to display the appropriate content
       function displaySearchInfo() {
@@ -20,7 +20,7 @@
           var results = response.data;
           for (var i = 0; i < results.length; i++) {
             var gifDiv = $("<div>");
-            var gifImages = $("<img>").attr("src", results[i].images.fixed_height.url);
+            var gifImages = $("<img>").attr("src", results[i].images.original.url);
             gifDiv.append(gifImages);
 
             $("#searches-view").prepend(gifDiv);
@@ -32,7 +32,7 @@
 
       }
 
-      // Function for displaying movie data
+      // Function for displaying search data
       function renderButtons() {
 
         // Deleting the movies prior to adding new movies
