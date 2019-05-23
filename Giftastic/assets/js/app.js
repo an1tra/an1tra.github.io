@@ -3,7 +3,7 @@
 	 
 	
 	 // Initial array of searches
-      var searches = ["Plane", "Carl Jung", "Mr. Nobody", "Tesla"];
+      var searches = ["Plane", "Boat", "Spaceship", "Tesla"];
 
       // displaySearchInfo function re-renders the HTML to display the appropriate content
       function displaySearchInfo() {
