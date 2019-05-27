@@ -1,0 +1,17 @@
+.display-3, .lead {
+    text-align: center;
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+#wrapper {
+    width: 90%;
+    margin: 0 auto;
+}
+
+form {
+    width: 95%;
+    margin: 0 auto;
+}
