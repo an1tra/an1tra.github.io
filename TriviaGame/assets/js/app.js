@@ -1,3 +1,4 @@
+
 //Timer
 var sec = 60;
 
@@ -19,7 +20,9 @@ function showDiv() {
  }
 
 
-
+function submit() {
+    document.getElementById("submit").addEventListener("click", alert("Answers Submitted. Thanks for playing!"));
+}
 
 
 
