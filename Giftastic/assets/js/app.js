@@ -24,13 +24,15 @@
 
             var gifImages = $("<img>");
             gifImages.attr("class", "animate");
-            // Still must load first per HW instructions.
+            //Basically building the element in the gif pause class activity.
+            // When the gifs populate you want them to appear "still" so you set the image tag source to the still url.
             gifImages.attr("src", results[i].images.fixed_height_still.url);
             gifImages.attr("data-still", results[i].images.fixed_height_still.url);
             gifImages.attr("data-animate", results[i].images.fixed_height.url);
             gifImages.attr("data-state", "still");
+            
+            
             gifDiv.append(gifImages);
-
             $("#searches-view").prepend(gifDiv);
 
           };
