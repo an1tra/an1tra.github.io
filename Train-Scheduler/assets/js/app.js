@@ -9,52 +9,35 @@ Example: var train = {
 }
 
 Staticly create a table.
-Dynamically create table data <td> to fill in table 
+Dynamically create table row<tr> & data <td> to fill in table 
 Capture input from each text field
-*/
-var trains = [
-    {name: "Trenton Express",
-        destination: "Trenton",
-        frequency: 25,
-        nextArrival: "05:35 PM",
-        minutesAway: 10},
-    {name: "Oregon Trail",
-        destination: "Salem, Oregon",
-        frequency: 3600,
-        nextArrival: "01:39 PM",
-        minutesAway: 1154},
-    {name: "Midnight Carriage",
-        destination: "Philadelphia",
-        frequency: 15,
-        nextArrival: "05:35 PM",
-        minutesAway: 10},
-    {name: "Sing Sing Caravan",
-        destination: "Atlanta",
-        frequency: 45,
-        nextArrival: "05:53 PM",
-        minutesAway: 28},
-    {name: "Boston Train",
-        destination: "Boston",
-        frequency: 65,
-        nextArrival: "05:50 PM",
-        minutesAway: 25},
-    {name: "California Caravan",
-        destination: "San Francisco",
-        frequency: 6000,
-        nextArrival: "01:25 AM",
-        minutesAway: 4740},
-    {name: "Analben's Train",
-        destination: "Florida",
-        frequency: 25,
-        nextArrival: "05:28 PM",
-        minutesAway: 3}
-];
-console.log(trains);
 
-for(var i=0; i < trains.length; i++){
-    var eachTrain = trains[i];
-    console.log(eachTrain);
-}
+Right now, this app is not storing input into firebase. Encountering ```ERROR AT LINE 32.```
+
+*/
+
+// Your web app's Firebase configuration
+var firebaseConfig = {
+    apiKey: "AIzaSyB7Atay0p__g8isNiqVHbJ6QHxZjY61MlY",
+    authDomain: "train-scheduler-6c73f.firebaseapp.com",
+    databaseURL: "https://train-scheduler-6c73f.firebaseio.com",
+    projectId: "train-scheduler-6c73f",
+    storageBucket: "train-scheduler-6c73f.appspot.com",
+    messagingSenderId: "741608056987",
+    appId: "1:741608056987:web:38a147c538e4afac"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  /*
+  var database = firebase.database();
+
+  var trainName = "";
+  var destination = "";
+  var firstTrainTime = "";
+  var frequency = 0;
+  var minAway = 0;
+  */
+
 
 $( document ).ready(function() {
     $("#submit").on("click", function(event) {
@@ -65,13 +48,52 @@ $( document ).ready(function() {
         var firstTrainTime = $("#firstTrainTime").val();
         var frequency = $("#frequency").val();
         var minAway = $("#minAway").val();
-        console.log(trainName);
-        console.log(destination);
-        console.log(firstTrainTime);
-        console.log(frequency);
-        console.log(minAway);
+        
+        /*
+        //Creating object in firebase
+        database.ref().set({
+            newName: trainName,
+            newDestination: destination,
+            newTrainTime: firstTrainTime,
+            newFrequency: frequency,
+            newMinAway: minAway
+        });
 
+        database.ref().on("value", function(snapshot){
 
+            console.log(snapshot.val());
+            console.log(snapshot.val().newName);
+            console.log(snapshot.val().newDestination);
+            console.log(snapshot.val().newTrainTime);
+            console.log(snapshot.val().newFrequency);
+            console.log(snapshot.val().newMinAway);
+
+            var a = $("<tr>");
+            var b = $("<td>");
+            var c = $("<td>");
+            var d = $("<td>");
+            var e = $("<td>");
+            var f = $("<td>")
+
+            b.text(snapshot.val().newName);
+            c.text(snapshot.val().newDestination);
+            d.text(snapshot.val().newTrainTime);
+            e.text(snapshot.val().newFrequency);
+            f.text(snapshot.val().newMinAway);
+
+            a.append(b);
+            a.append(c);
+            a.append(d);
+            a.append(e);
+            a.append(f);
+            $("tbody").append(a);
+
+        }, function(errorObject) {
+            console.log("Errors handled: " + errorObject.code);
+        });
+        */
+
+        
         var newObject = {
             newName: trainName,
             newDestination: destination,
@@ -80,7 +102,7 @@ $( document ).ready(function() {
             newMinAway: minAway
         };
         console.log(newObject);
-        console.log(newObject.newName);
+        
 
         var a = $("<tr>");
         var b = $("<td>");
@@ -101,7 +123,7 @@ $( document ).ready(function() {
         a.append(e);
         a.append(f);
         $("tbody").append(a);
-
+        
         
     })
 });
