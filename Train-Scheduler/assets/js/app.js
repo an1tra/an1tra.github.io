@@ -9,11 +9,11 @@ Example: var train = {
 }
 
 Staticly create a table.
-Dynamically create table row<tr> & data <td> to fill in table 
 Capture input from each text field
+Dynamically create table row<tr> & data <td> to fill in table 
 
 Right now, this app is not storing input into firebase. Encountering ```ERROR AT LINE 32.```
-
+If you comment out the firebase, this app works by adding all input to the appropriate display area. 
 */
 
 // Your web app's Firebase configuration
@@ -28,7 +28,7 @@ var firebaseConfig = {
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  /*
+  
   var database = firebase.database();
 
   var trainName = "";
@@ -36,11 +36,12 @@ var firebaseConfig = {
   var firstTrainTime = "";
   var frequency = 0;
   var minAway = 0;
-  */
+  
 
 
-$( document ).ready(function() {
+
     $("#submit").on("click", function(event) {
+        
         event.preventDefault();
     
         var trainName = $("#trainName").val();
@@ -49,7 +50,7 @@ $( document ).ready(function() {
         var frequency = $("#frequency").val();
         var minAway = $("#minAway").val();
         
-        /*
+        
         //Creating object in firebase
         database.ref().set({
             newName: trainName,
@@ -91,7 +92,7 @@ $( document ).ready(function() {
         }, function(errorObject) {
             console.log("Errors handled: " + errorObject.code);
         });
-        */
+        
 
         
         var newObject = {
@@ -126,7 +127,7 @@ $( document ).ready(function() {
         
         
     })
-});
+
 
     
     
