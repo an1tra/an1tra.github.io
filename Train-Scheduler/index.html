@@ -11,7 +11,7 @@
     <!--jQuery-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <!--Firebase-->
-    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
   </head>
   <body>
 
@@ -31,13 +31,13 @@
                   <tr>
                     <th scope="col">Train Name</th>
                     <th scope="col">Destination</th>
-                    <th scope="col">Frequency(min)</th>
+                    <th scope="col">Frequency</th>
                     <th scope="col">Next Arrival</th>
                     <th scope="col">Minutes Away</th>
                   </tr>
                 </thead>
                 <tbody id="table-body">
-                  
+
                 </tbody>
               </table>
         </div>
@@ -58,12 +58,12 @@
                 <input type="text" class="form-control" id="destination" placeholder="destination input">
               </div>
               <div class="form-group">
-                <label for="firstTrainTime">First Train Time (HH:mm - military time)</label>
-                <input type="text" class="form-control" id="firstTrainTime" placeholder="firstTrainTime input">
-              </div>
-              <div class="form-group">
                 <label for="frequency">Frequency (min)</label>
                 <input type="text" class="form-control" id="frequency" placeholder="frequency input">
+              </div>
+              <div class="form-group">
+                <label for="firstTrainTime">First Train Time (HH:mm - military time)</label>
+                <input type="text" class="form-control" id="firstTrainTime" placeholder="firstTrainTime input">
               </div>
               <div class="form-group">
                 <label for="minAway">Minutes Away</label>

@@ -33,8 +33,8 @@ var firebaseConfig = {
 
   var trainName = "";
   var destination = "";
-  var firstTrainTime = "";
   var frequency = 0;
+  var firstTrainTime = "";
   var minAway = 0;
   
 
@@ -43,32 +43,39 @@ var firebaseConfig = {
     $("#submit").on("click", function(event) {
         
         event.preventDefault();
-    
+        
+
         var trainName = $("#trainName").val();
         var destination = $("#destination").val();
-        var firstTrainTime = $("#firstTrainTime").val();
         var frequency = $("#frequency").val();
+        var firstTrainTime = $("#firstTrainTime").val();
         var minAway = $("#minAway").val();
         
         
         //Creating object in firebase
         database.ref().set({
-            newName: trainName,
-            newDestination: destination,
-            newTrainTime: firstTrainTime,
-            newFrequency: frequency,
-            newMinAway: minAway
+            trainName: trainName,
+            destination: destination,
+            frequency: frequency,
+            firstTrainTime: firstTrainTime,
+            minAway: minAway
         });
 
+
+        
+
         database.ref().on("value", function(snapshot){
+        
 
             console.log(snapshot.val());
-            console.log(snapshot.val().newName);
-            console.log(snapshot.val().newDestination);
-            console.log(snapshot.val().newTrainTime);
-            console.log(snapshot.val().newFrequency);
-            console.log(snapshot.val().newMinAway);
+            console.log(snapshot.val().trainName);
+            console.log(snapshot.val().destination);
+            console.log(snapshot.val().frequency);
+            console.log(snapshot.val().firstTrainTime);
+            console.log(snapshot.val().minAway);
+            
 
+            
             var a = $("<tr>");
             var b = $("<td>");
             var c = $("<td>");
@@ -76,55 +83,29 @@ var firebaseConfig = {
             var e = $("<td>");
             var f = $("<td>")
 
-            b.text(snapshot.val().newName);
-            c.text(snapshot.val().newDestination);
-            d.text(snapshot.val().newTrainTime);
-            e.text(snapshot.val().newFrequency);
-            f.text(snapshot.val().newMinAway);
+            b.text(snapshot.val().trainName);
+            c.text(snapshot.val().destination);
+            d.text(snapshot.val().frequency);
+            e.text(snapshot.val().firstTrainTime);
+            f.text(snapshot.val().minAway);
 
+            
             a.append(b);
             a.append(c);
             a.append(d);
             a.append(e);
             a.append(f);
-            $("tbody").append(a);
+
+            
+            $("#table-body").append(a);
+            
 
         }, function(errorObject) {
             console.log("Errors handled: " + errorObject.code);
         });
         
 
-        
-        var newObject = {
-            newName: trainName,
-            newDestination: destination,
-            newTrainTime: firstTrainTime,
-            newFrequency: frequency,
-            newMinAway: minAway
-        };
-        console.log(newObject);
-        
 
-        var a = $("<tr>");
-        var b = $("<td>");
-        var c = $("<td>");
-        var d = $("<td>");
-        var e = $("<td>");
-        var f = $("<td>")
-
-        b.text(newObject.newName);
-        c.text(newObject.newDestination);
-        d.text(newObject.newTrainTime);
-        e.text(newObject.newFrequency);
-        f.text(newObject.newMinAway);
-
-        a.append(b);
-        a.append(c);
-        a.append(d);
-        a.append(e);
-        a.append(f);
-        $("tbody").append(a);
-        
         
     })
 
