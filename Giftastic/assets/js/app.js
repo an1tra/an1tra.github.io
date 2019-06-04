@@ -24,6 +24,9 @@
           a.attr("data-name", searches[i]);
           // Providing the initial button text
           a.text(searches[i]);
+
+          
+
           // Adding the button to the buttons-view div
           $("#buttons-view").append(a);
         }

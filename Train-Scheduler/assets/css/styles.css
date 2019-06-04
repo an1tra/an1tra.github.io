@@ -6,6 +6,12 @@
     margin-bottom: 20px;
 }
 
+#train-table th,
+td {
+  display: inline-block;
+  width: 16.575%;
+}
+
 #wrapper {
     width: 90%;
     margin: 0 auto;

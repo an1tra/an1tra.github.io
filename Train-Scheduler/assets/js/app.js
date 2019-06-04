@@ -37,8 +37,8 @@ var firebaseConfig = {
   var firstTrainTime = "";
   var minAway = 0;
   
-
-
+  
+  
 
     $("#submit").on("click", function(event) {
         
@@ -53,6 +53,8 @@ var firebaseConfig = {
         
         
         //Creating object in firebase
+
+
         database.ref().set({
             trainName: trainName,
             destination: destination,
@@ -61,11 +63,12 @@ var firebaseConfig = {
             minAway: minAway
         });
 
-
+        
         
 
         database.ref().on("value", function(snapshot){
         
+            
 
             console.log(snapshot.val());
             console.log(snapshot.val().trainName);
@@ -74,9 +77,10 @@ var firebaseConfig = {
             console.log(snapshot.val().firstTrainTime);
             console.log(snapshot.val().minAway);
             
-
+          
             
             var a = $("<tr>");
+
             var b = $("<td>");
             var c = $("<td>");
             var d = $("<td>");
@@ -89,15 +93,16 @@ var firebaseConfig = {
             e.text(snapshot.val().firstTrainTime);
             f.text(snapshot.val().minAway);
 
-            
+           
+
             a.append(b);
             a.append(c);
             a.append(d);
             a.append(e);
             a.append(f);
 
+             $("#table-body").append(a);
             
-            $("#table-body").append(a);
             
 
         }, function(errorObject) {
