@@ -1,4 +1,7 @@
-
+#banner {
+    width: 100%;
+    height: auto;
+}
 
 #container {
     margin:50px;
@@ -32,9 +35,12 @@
     height: 500px;
 }
 
-#banner {
-    width: 100%;
-    height: auto;
+#google-maps-display {
+    width: 50%;
+}
+
+#yelp-display {
+    width: 50%;
 }
 
 #logo {
