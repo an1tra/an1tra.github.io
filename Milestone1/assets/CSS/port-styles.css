@@ -6,8 +6,8 @@
     width: 50%;
     position: absolute;
     left: 200px;
-    margin-top:10%;
-    
+    margin-top:1%;
+    font-family: 'Source Code Pro', monospace;
 }
 
 h1 {

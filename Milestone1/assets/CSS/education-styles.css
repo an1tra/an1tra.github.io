@@ -2,8 +2,20 @@
     box-sizing: border-box;
 }
 
+section {
+    width: 80%;
+    float: right;
+    margin: 0 auto;
+    text-align: left;
+    font-family: 'Source Code Pro', monospace;
+}
 
 .content {
+    width: 25%;
+    position: absolute;
+    left: 25%;
     text-align: center;
-    border: 1px solid green;
+
 }
+
+
