@@ -12,6 +12,7 @@ body {
 
 header h1 {
     text-align: center;
+    margin-top: 2%;
 }
 
 header {
@@ -23,13 +24,12 @@ header {
 
 
 nav ul {
-  width: 15%;
+  width: 10%;
   float: left;
   list-style-type: none;
-  margin: 0;
+  margin: 0 3%;
   padding: 0;
-  
-  
+  text-align: center;
 }
 
 nav ul li {
@@ -47,6 +47,7 @@ nav ul li a {
 nav ul li a:hover { 
   background: black;
   color:white;
+  text-align: center;
 }
 
 
