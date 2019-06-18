@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Squad</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="google" content="notranslate">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    
+
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script> 
+    <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
+
+ 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+</head>
+  <body>
+    <!-- NAV BAR?-->
+    <!-- <div class="navbar navbar-dark" style="background-color:white;" class = "navBar">
+     
+    
+      </a>
+    </div> -->
+    <!--Upper Section: Add Events & Display Events-->
+    <div id="container">
+        
+        <!--Input Area-->
+        <div id="add-event" class="card card-body shadow p-3 mb-5 bg-white rounded">
+            
+              <img id="logo" src="assets/images/squadlogo.jpg" alt="logo">
+            
+
+            <h4 class="center">Add Event:</h4>
+
+            <form action="#">
+                <label for="squadLeader">Squad Leader:</label>
+                <input type="text" placeholder="Squad Leader" id="squadLeader" class="form-control">
+                <br>
+                <label for="inputEventName">Event Name: </label>
+                <input type="text" placeholder="Event Name" id="inputEventName" class="form-control">
+                <br>
+                <label for="DT">Event Date & Time:</label>
+                <input type="datetime-local" name="DT" id="DT" class="form-control">
+                <br>
+                <select class="form-control" id ="location">
+                    <option>Choose Location</option>
+                    <option>Bryant Neighborhood Park</option>
+                    <option>Frazier Park</option>
+                    <option>Freedom Park</option>
+                    <option>Kirk Farm Park</option>
+                    <option>Latta Park</option>
+                    <option>Nevin Community Park</option>
+                    <option>Renaissance Park</option>
+                    <option>Southside Park</option>
+                  </select>
+                <br>
+                <label for="eventDescription">Event Description:</label>
+                <textarea name="eventDescription" id="eventDescription" class="form-control" rows="3" required="required"></textarea>
+                
+          
+
+                <button id="addBtn" class="btn btn-success" type="submit">Add Event</button>
+              </form>
+          
+        </div>
+
+        
+        <!--Events Display Container-->
+        <div id="events-display">
+
+               
+
+            <!--Events Dump-->
+            
+            <!-- <img src = "https://dcassetcdn.com/design_img/3011680/556546/556546_16622372_3011680_a7a9bcff_image.jpg" class ="squad-finder"> -->
+            <a href="#" class="myButton">Log-Out</a>
+            <h4 class="card-title">Currently Available Squads:</h4>
+            <div class = "squad-finder-logo"></div>
+          
+          
+            <div id="events-dump">
+              <!--Dump Events Here-->
+              <!-- <div class="no-highlight">
+                  <h4>Sample Event Title</h4>
+                  <p><strong>Squad Leader:</strong></p><span></span>
+                  <p><strong>Date & Time:</strong></p><span></span>
+                  <p><strong>Location:</strong></p><span></span>
+                  <hr>
+              </div>
+
+              <div class="highlight">
+                  <h4>Sample Event Title</h4>
+                  <p><strong>Squad Leader:</strong></p><span></span>
+                  <p><strong>Date & Time:</strong></p><span></span>
+                  <p><strong>Location:</strong></p><span></span>
+                  <hr>
+              </div>
+
+              <div class="no-highlight">
+                  <h4>Sample Event Title</h4>
+                  <p><strong>Squad Leader:</strong></p><span></span>
+                  <p><strong>Date & Time:</strong></p><span></span>
+                  <p><strong>Location:</strong></p><span></span>
+                  <hr>
+              </div>
+
+              <div class="no-highlight">
+                  <h4>Sample Event Title</h4>
+                  <p><strong>Squad Leader:</strong></p><span></span>
+                  <p><strong>Date & Time:</strong></p><span></span>
+                  <p><strong>Location:</strong></p><span></span>
+                  <hr>
+              </div>
+              
+              <div class="no-highlight">
+                  <h4>Sample Event Title</h4>
+                  <p><strong>Squad Leader:</strong></p><span></span>
+                  <p><strong>Date & Time:</strong></p><span></span>
+                  <p><strong>Location:</strong></p><span></span>
+                  <hr>
+              </div> -->
+
+              
+            </div>    
+    
+        </div>
+
+    </div>
+ 
+  <!--Lower Section: API Display-->
+  <div id="API-display" class="card shadow p-3 mb-5 bg-white rounded">
+    <div class="card-header" id="parkDetails"><h2>Park Details</h2></div>
+    <br>
+    <!--Google Maps API-->
+    <div id="google-maps-box">
+      <br>
+      <div id="google-maps-display"></div>
+      <input class="form-control" id="location-SearchBox" type="text" placeholder="Enter Location">
+    </div>
+    <!--Yelp API-->
+    <div id="yelp-display">
+      <br> 
+      <h4 id="yelp-name"></h4>
+      <p id="yelp-address"></p>
+      <p id="yelp-rating"></p>
+      <a href="" target="_blank" id="yelp-reviews-url"></a>
+      <p id="yelp-phone-number"></p>
+      <img id="placeholder-photos" src="assets/images/squadlogoplaceholder.jpg">
+      <img id="yelp-photos">
+    </div>
+  </div>
+      
+    <!-- JavaScript -->
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTwlnvuNPf2SQsdtovRTH6dyTablFaooE&libraries=places&callback=initMap">                                                    
+    </script>
+    <script type="text/javascript" src="assets/javascript/javascript.js"></script>
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+
+</html>
