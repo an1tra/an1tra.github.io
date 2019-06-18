@@ -10,8 +10,10 @@
     font-family: 'Source Code Pro', monospace;
 }
 
-h1 {
+.title {
     text-align: center;
+    width: 100%;
+   
 }
 
 div p {
