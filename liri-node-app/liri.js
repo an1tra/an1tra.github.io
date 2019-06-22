@@ -123,23 +123,24 @@ function movieThis() {
 function doWhatItSays() {
     var fs = require("fs");
 
-    var text = response;
-
+    var text = fs.readFile("random.txt", "utf8", function(err, data) {
+        if (err) {
+          return console.log(err);
+        }
+    })
 
     fs.appendFile("log.txt", text, function(err) {
 
-  // If an error was experienced we will log it.
-    if (err) {
-    console.log(err);
-  }
+    // If an error was experienced we will log it.
+        if (err) {
+            console.log(err);
+            }
 
   // If no error is experienced, we'll log the phrase "Content Added" to our node console.
-    else {
-        console.log("Content Added!");
-  }
-
-});
-}
+        else {
+            console.log("Content Added!");
+            }
 
 
-
+        });
+    }
