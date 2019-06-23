@@ -76,7 +76,7 @@ function spotifyThisSong() {
   var spotifyApi = new SpotifyWebApi({
     clientId: '78b3a768a6b0482eae546ef0cbf02748',
     clientSecret: 'a5f3a0deb8c74a479e7d5f10f165ddef',
-    accessToken: 'BQBD88RzwyFThJ-AOfCLUwzNEIGkNJTJT0Gjq0ZRkrx5F708ovLS2Ftj75tt3waTGIMEMicVX5NXxlIsn9w'
+    accessToken: 'BQCQS6hIAeuxvzHIvdDHVbbsMjzR0ru_fSDr2EyS-mR8Eza6nz-oOYepC1_kO3AgwY_6pMir9eXvTiD-ia8'
   });
   
   spotifyApi.clientCredentialsGrant().then(
@@ -98,8 +98,10 @@ function spotifyThisSong() {
   // Do search using the access token
   spotifyApi.searchTracks('track:'+track).then(
     function(data) {
-      //console.log(data.body.tracks.items);
+      //console.log(data.body.tracks.items[0].artists[0].name);
       for(var i = 0; i < 20; i++){
+        console.log("Artist(s): "+data.body.tracks.items[i].artists[0].name);
+        console.log("Song Name: "+ data.body.tracks.items[i].name);
         console.log("Preview URL: "+ data.body.tracks.items[i].preview_url);
       }
       
