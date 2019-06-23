@@ -40,10 +40,18 @@ function concertThis() {
     console.log(artist);
     axios.get("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp&market=US").then(
       function(response) {
-        var date = response.data[0].datetime;
-        console.log(response.data[0].venue.name);
-        console.log(response.data[0].venue.city);
-        console.log(moment(date).format("MM/DD/YYYY"));
+        //console.log(response.data);
+
+        for(var i=0; i < response.data.length; i++){
+          var date = response.data[i].datetime;
+          console.log("Venue: "+response.data[i].venue.name);
+          console.log("Location: "+response.data[i].venue.city);
+          console.log("Date: "+moment(date).format("MM/DD/YYYY"));
+          console.log("-----------------------------------------");
+
+        }
+
+    
       })
          .catch(function(error) {
         if (error.response) {
@@ -103,6 +111,7 @@ function spotifyThisSong() {
         console.log("Artist(s): "+data.body.tracks.items[i].artists[0].name);
         console.log("Song Name: "+ data.body.tracks.items[i].name);
         console.log("Preview URL: "+ data.body.tracks.items[i].preview_url);
+        console.log("-----------------------------------------------------");
       }
       
     },
