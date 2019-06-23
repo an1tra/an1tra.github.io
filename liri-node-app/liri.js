@@ -2,9 +2,20 @@ require("dotenv").config();
 var axios = require("axios");
 var moment = require('moment');
 
-var keys = require("./keys");
-
+//var keys = require("./keys.js");
 //var spotify = new Spotify(keys.spotify);
+//
+
+/*
+// credentials are optional
+var spotifyApi = new SpotifyWebApi({
+  clientId: '78b3a768a6b0482eae546ef0cbf02748',
+  clientSecret: 'a5f3a0deb8c74a479e7d5f10f165ddef',
+  redirectUri: 'https://oauth.io/auth'
+});*/
+
+
+
 
 var command = process.argv[2];
 
@@ -27,7 +38,7 @@ function concertThis() {
 
     var artist = process.argv[3];
     console.log(artist);
-    axios.get("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp").then(
+    axios.get("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp&market=US").then(
       function(response) {
         var date = response.data[0].datetime;
         console.log(response.data[0].venue.name);
@@ -56,33 +67,49 @@ function concertThis() {
       });
 }
 
+
 function spotifyThisSong() {
-    var song = process.argv[3];
-    console.log(song);
-    axios.get("https://api.spotify.com/v1/search?q="+song+"&type=track&market=US&limit=10").then(
-      function(response) {
-        console.log(response);
-      })
-       /*  .catch(function(error) {
-        if (error.response) {
-          // The request was made and the server responded with a status code
-          // that falls out of the range of 2xx
-          console.log("---------------Data---------------");
-          console.log(error.response.data);
-          console.log("---------------Status---------------");
-          console.log(error.response.status);
-          console.log("---------------Status---------------");
-          console.log(error.response.headers);
-        } else if (error.request) {
-          // The request was made but no response was received
-          // `error.request` is an object that comes back with details pertaining to the error that occurred.
-          console.log(error.request);
-        } else {
-          // Something happened in setting up the request that triggered an Error
-          console.log("Error", error.message);
-        }
-        console.log(error.config);
-      });  */
+  var track= "'"+process.argv[3]+"'";
+
+  var SpotifyWebApi = require('spotify-web-api-node');
+  
+  var spotifyApi = new SpotifyWebApi({
+    clientId: '78b3a768a6b0482eae546ef0cbf02748',
+    clientSecret: 'a5f3a0deb8c74a479e7d5f10f165ddef',
+    accessToken: 'BQBD88RzwyFThJ-AOfCLUwzNEIGkNJTJT0Gjq0ZRkrx5F708ovLS2Ftj75tt3waTGIMEMicVX5NXxlIsn9w'
+  });
+  
+  spotifyApi.clientCredentialsGrant().then(
+    function(data) {
+      console.log('The access token expires in ' + data.body['expires_in']);
+      console.log('The access token is ' + data.body['access_token']);
+  
+      // Save the access token so that it's used in future calls
+      spotifyApi.setAccessToken(data.body['access_token']);
+    },
+    function(err) {
+      console.log(
+        'Something went wrong when retrieving an access token',
+        err.message
+      );
+    }
+  );
+  
+  // Do search using the access token
+  spotifyApi.searchTracks('track:'+track).then(
+    function(data) {
+      //console.log(data.body.tracks.items);
+      for(var i = 0; i < 20; i++){
+        console.log("Preview URL: "+ data.body.tracks.items[i].preview_url);
+      }
+      
+    },
+    function(err) {
+      console.log('Something went wrong!', err);
+    }
+  );
+
+    
 }
 
 function movieThis() {
