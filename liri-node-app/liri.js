@@ -84,7 +84,7 @@ function spotifyThisSong() {
   var spotifyApi = new SpotifyWebApi({
     clientId: '78b3a768a6b0482eae546ef0cbf02748',
     clientSecret: 'a5f3a0deb8c74a479e7d5f10f165ddef',
-    accessToken: 'BQCQS6hIAeuxvzHIvdDHVbbsMjzR0ru_fSDr2EyS-mR8Eza6nz-oOYepC1_kO3AgwY_6pMir9eXvTiD-ia8'
+    accessToken: 'BQDiIfbtM5LJDJ0WUkxgl7xiK5xtK1Rmqc7W_tHmRXdGRIJgPF_v7vl_ncy05BDxWMfGe1iHgWC0NM2VgOQ'
   });
   
   spotifyApi.clientCredentialsGrant().then(
