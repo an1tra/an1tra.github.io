@@ -64,6 +64,8 @@ function concertThis() {
       });
 }
 
+
+
 function spotifyThisSong() {
 var Spotify = require('node-spotify-api');
  
@@ -72,9 +74,10 @@ var spotify = new Spotify({
   secret: "a5f3a0deb8c74a479e7d5f10f165ddef"
 });
 
+let track = process.argv[3];
  
 spotify
-  .search({ type: 'track', query: "'"+process.argv[3]+"'"})
+  .search({ type: 'track', query: "'"+track+"'"})
   .then(function(response) {
     //console.log(response.tracks.items[0].external_urls.spotify);
     for(var i = 0; i < 20; i++){
@@ -135,6 +138,26 @@ function doWhatItSays() {
     var text = fs.readFile("random.txt", "utf8", function(err, data) {
         if (err) {
           return console.log(err);
+        }
+        //console.log(data);
+        var dataArr = data.split(',');
+        console.log(dataArr);
+        process.argv[2] = dataArr[0];
+        process.argv[3] = dataArr[1];
+        
+       
+
+        var command = process.argv[2];
+        switch(command) {
+          case "concert-this":
+              concertThis();
+          break;
+          case "spotify-this-song":
+              spotifyThisSong();
+          break;
+          case "movie-this":
+              movieThis();
+          break;
         }
     })
 
