@@ -81,10 +81,19 @@ spotify
   .then(function(response) {
     //console.log(response.tracks.items[0].external_urls.spotify);
     for(var i = 0; i < 20; i++){
+
+      var showData = [
+        "Artist(s): "+response.tracks.items[i].artists[0].name,
+        "Song Name: "+ response.tracks.items[i].name,
+        "Spotify URL: "+ response.tracks.items[i].external_urls.spotify,
+        "-----------------------------------------------------"
+      ].join("\n\n");
+      console.log(showData);
+      /*
       console.log("Artist(s): "+response.tracks.items[i].artists[0].name);
       console.log("Song Name: "+ response.tracks.items[i].name);
       console.log("Spotify URL: "+ response.tracks.items[i].external_urls.spotify);
-      console.log("-----------------------------------------------------");
+      console.log("-----------------------------------------------------");*/
     }
   })
   .catch(function(err) {
@@ -141,7 +150,7 @@ function doWhatItSays() {
         }
         //console.log(data);
         var dataArr = data.split(',');
-        console.log(dataArr);
+        //console.log(dataArr);
         process.argv[2] = dataArr[0];
         process.argv[3] = dataArr[1];
         
@@ -159,6 +168,9 @@ function doWhatItSays() {
               movieThis();
           break;
         }
+
+
+
     })
 
     fs.appendFile("log.txt", text, function(err) {
@@ -170,7 +182,7 @@ function doWhatItSays() {
 
   // If no error is experienced, we'll log the phrase "Content Added" to our node console.
         else {
-            console.log("Content Added!");
+            console.log("Content Added");
             }
 
 
