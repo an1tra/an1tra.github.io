@@ -1,3 +1,4 @@
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
 DROP DATABASE IF EXISTS bamazon_db;
 CREATE DATABASE bamazon_db;
 USE bamazon_db;

@@ -19,7 +19,7 @@ connection.connect(function(err) {
 function displayInventory() {
   connection.query("SELECT * FROM products", function(err, res) {
     if (err) throw err;
-    console.log(res);
+    //console.log(res);
     for(var i = 0; i < res.length; i++){
       console.log("Item ID: " +res[i].item_id + " Product Name: " + res[i].product_name + " Price: $"+ res[i].price + " Stock: " + res[i].stock);
       console.log("===========================================================");
@@ -28,7 +28,7 @@ function displayInventory() {
   });
 }
 
-function promptCustomer = function(res){
+var promptCustomer = function(res){
   inquirer.prompt([{
     type: "input",
     name: "choice",
@@ -52,12 +52,15 @@ function promptCustomer = function(res){
             }
           }
         }).then(function(answer){
-          if((res[id].stock - answer.quant)>0){
-            connection.query("UPDATE products SET stock='" + (res[id].stock-answer.quant)+"'
-              WHERE product_name='" + product+ "'", function(err, res2){
+          if((res[i].stock - answer.quant)>0){
+            connection.query("UPDATE products SET stock=" + (res[i].stock-answer.quant)+ 
+              "WHERE product_name=" + product+ "'", function(err, res2){
                 console.log("Product Bought!");
                 displayInventory();
               }) 
+          } else {
+            console.log("Not a valid selection!");
+            promptCustomer(res);
           }
           
         })
