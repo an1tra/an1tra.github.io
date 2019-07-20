@@ -28,11 +28,13 @@ function displayInventory() {
   });
 }
 
+
+
 var promptCustomer = function(res){
   inquirer.prompt([{
     type: "input",
     name: "choice",
-    message: "What would you like to purchase? [Quit with Q]"
+    message: "Enter product name:"
   }]).then(function(answer){
     var correct = false;
     for(var i=0; i < res.length; i++){
@@ -52,8 +54,11 @@ var promptCustomer = function(res){
             }
           }
         }).then(function(answer){
-          if((res[i].stock - answer.quant)>0){
-            connection.query("UPDATE products SET stock=" + (res[i].stock-answer.quant)+ 
+          console.log(res[id].stock);
+          console.log(answer.quant);
+      
+          if((res[id].stock - answer.quant)>0){
+            connection.query("UPDATE products SET stock=" + (res[id].stock-answer.quant)+ 
               "WHERE product_name=" + product+ "'", function(err, res2){
                 console.log("Product Bought!");
                 displayInventory();
