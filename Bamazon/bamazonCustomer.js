@@ -28,48 +28,78 @@ function displayInventory() {
   });
 }
 
-
-
-var promptCustomer = function(res){
-  inquirer.prompt([{
-    type: "input",
-    name: "choice",
-    message: "Enter product name:"
-  }]).then(function(answer){
-    var correct = false;
-    for(var i=0; i < res.length; i++){
-      if(res[i].product_name === answer.choice){
-        correct = true;
-        var product = answer.choice;
-        var id=i;
-        inquirer.prompt({
-          type: "input",
-          name: "quant",
-          message: "How many would you like to buy?",
-          validate: function(value){
-            if(isNaN(value) === false){
-              return true;
-            } else {
-              return false;
-            }
-          }
-        }).then(function(answer){
-          console.log(res[id].stock);
-          console.log(answer.quant);
-      
-          if((res[id].stock - answer.quant)>0){
-            connection.query("UPDATE products SET stock=" + (res[id].stock-answer.quant)+ 
-              "WHERE product_name=" + product+ "'", function(err, res2){
-                console.log("Product Bought!");
-                displayInventory();
-              }) 
-          } else {
-            console.log("Not a valid selection!");
-            promptCustomer(res);
-          }
-          
-        })
+var promptCustomer = function(res) {
+  inquirer.prompt([
+    {
+      type: "input",
+      name: "id",
+      message: "Please enter the Item ID of the product you would like to buy.\n",
+      validate: function(value) {
+        if (!isNaN(value) && value < 11) {
+          return true;
+        }
+        return false;
       }
-    }
-  })
-}
+     },
+ 
+     {
+      type: "input",
+      name: "quant",
+      message: "How many units of the product would you like to buy? \n",
+      validate: function(value) {
+        if (!isNaN(value)) {
+          return true;
+        }
+        return false;
+       }
+     }
+  ]).then(function(answer){
+    var userId = answer.id;
+			console.log("Chosen item id: " , userId);
+
+			var userQuant = answer.quant;
+			console.log("Chosen quantity from stock: " , userQuant , "\n");
+
+			connection.query("SELECT * FROM products WHERE ?", [{ item_id : answer.id }], function(err, res) {
+				if (err) throw err;
+				
+				
+				console.table(res);
+				var current_quantity = res[0].stock;
+				console.log("Current quantity in stock: " , current_quantity);
+				var price = res[0].price;
+				var remaining_quantity = current_quantity - answer.quant;
+				console.log("Remaining quantity in stock: " , remaining_quantity);
+
+				if(current_quantity > answer.quant) {
+
+					console.log("Amount Remaining: " + remaining_quantity);
+
+					connection.query("UPDATE products SET stock=? WHERE item_id=?",
+                    [
+                    remaining_quantity, answer.id
+                    ],
+
+					
+						/*function(err, res){
+							//console.table(res);
+            }*/
+            );
+
+					connection.query("SELECT * FROM products", function(err, res) {
+
+						console.log("This is the updated inventory of product items: ");
+						console.log("------------------------------- \n");
+						console.table(res);
+					});
+
+				} else {
+					console.log("Insufficient amounts, please edit your units!");
+				}
+
+			connection.end();
+
+			});
+		})
+  }
+
